@@ -12,12 +12,8 @@ then
     exit 1
 fi
 
-re='^[0-9]+$'
-if ! [[ $INPUT =~ $re ]] ; then
-   echo "error: Input is not an integer" >&2; exit 1
-fi
+RESULT=$(echo "${INPUT} - 32" | bc)
+RESULT=$(echo "${RESULT} * 5/9" | bc)
 
-RESULT=$(($INPUT-32))
-RESULT=$((RESULT*5/9))
 
 echo "$INPUT F equals $RESULT C"

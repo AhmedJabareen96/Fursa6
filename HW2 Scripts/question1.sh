@@ -8,27 +8,17 @@ then
         exit 1
 fi
 
-re='^[0-9]+$'
-if ! [[ $FIRST =~ $re ]] ; then
-   echo "error: First input is not a number" >&2; exit 1
-fi
-
-re='^[0-9]+$'
-if ! [[ $SECOND =~ $re ]] ; then
-   echo "error: Second input is not a number" >&2; exit 1
-fi
-
-SUM=$(($FIRST+$SECOND))
 
 
-if [ $SUM -lt 100 ]
+SUM=$(echo "$FIRST + $SECOND" | bc)
+
+if [ 1 -eq "$(echo "${SUM} < 100" | bc)" ]
 then
         echo "sum is less than 100"
-elif [ $SUM -eq 100 ]
+elif [ 1 -eq "$(echo "${SUM} > 100" | bc)" ]
 then
-        echo "sum equals 100"
+        echo "sum greater than 100"
 else
 
-        echo "sum is greater than 100"
+        echo "sum equals 100"
 fi
-
