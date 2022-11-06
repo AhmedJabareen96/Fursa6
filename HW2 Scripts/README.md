@@ -8,7 +8,7 @@
 Run it directly using bash
 
     bash question1.sh <input1> <input2>
- Notice that inputs must be integers.
+ Notice that inputs must be integers/floats.
 In case of an empty input, the program will be terminated, and an error message will be shown as well.
 
 **For the second script, use:**
@@ -19,7 +19,7 @@ In case of an empty input, the program will be terminated, and an error message 
   
 
     bash question1.sh <input>
-  Notice that the input must be an integer.
+  Notice that the input must be an integer/float.
   In case of an empty input, the program will be terminated, and an error message will be shown as well.
 **For the third script, use:**
 
@@ -30,5 +30,5 @@ In case of an empty input, the program will be terminated, and an error message 
 
     bash question3.sh <input>
    Notice that the input must be a directory,
-   In a case of an empty input, the /home directory is taken instead.
+   In a case of an empty input, or an invalid directory,  the /home directory is taken instead.
 
