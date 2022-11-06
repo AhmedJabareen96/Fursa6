@@ -3,9 +3,9 @@
 MYDIR=$1
 
 # check for an input
-if [ $# -lt 1 ];
+if [ $# -lt 1 ] || [ ! -d "$MYDIR" ];
 then
-echo "Did not receive an input"
+echo "Did not receive a valid input"
 echo "showing the largest 10 files in the home directory and it's sub-directories"
 MYDIR="/home"
 fi
