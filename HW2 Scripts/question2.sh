@@ -8,8 +8,13 @@ INPUT=$1
 
 if [ $# -lt 1 ];
 then    
-    echo "Error: there's no input. (one integer is required)"
+    echo "Error: there's no input. (one number is required)"
     exit 1
+fi
+
+re='^[0-9]+([.][0-9]+)?$'
+if ! [[ $INPUT =~ $re ]] ; then
+   echo "error: Not a number" >&2; exit 1
 fi
 
 RESULT=$(echo "${INPUT} - 32" | bc)

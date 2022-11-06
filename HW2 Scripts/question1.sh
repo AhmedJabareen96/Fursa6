@@ -7,7 +7,15 @@ then
 	echo "Input error: no enough arguments. (2 required)"
         exit 1
 fi
+re='^[0-9]+([.][0-9]+)?$'
+if ! [[ $FIRST =~ $re ]] ; then
+   echo "error: first argument is not a number" >&2; exit 1
+fi
 
+re='^[0-9]+([.][0-9]+)?$'
+if ! [[ $SECOND =~ $re ]] ; then
+   echo "error: second argument is not a number" >&2; exit 1
+fi
 
 
 SUM=$(echo "$FIRST + $SECOND" | bc)
