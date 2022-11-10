@@ -11,5 +11,5 @@ MYDIR="/home"
 fi
 
 # find the largest 10 files/directories
-find $MYDIR -type f -iname "*.mp4" -printf '%s %p\n'| sort -nr | head -10
+find $MYDIR -type f -iname "*" -printf '%s %p\n'| sort -nr | head -10
 
