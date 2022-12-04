@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: bitcoin-rate
-        image: ahmedjabareen/bitcoin-rate-app
+        image: ahmedjabareen/bitcoin-rate-app:1.1
         ports:
         - containerPort: 5000
 ---
