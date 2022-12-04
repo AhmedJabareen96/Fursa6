@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bitcoin-rate
+  labels:
+    app: bitcoin-rate
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bitcoin-rate
+  template:
+    metadata:
+      labels:
+        app: bitcoin-rate
+    spec:
+      containers:
+      - name: bitcoin-rate
+        image: ahmedjabareen/bitcoin-rate-app
+        ports:
+        - containerPort: 5000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ynet-rss
+  labels:
+    app: ynet-rss
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ynet-rss
+  template:
+    metadata:
+      labels:
+        app: ynet-rss
+    spec:
+      containers:
+      - name: ynet-rss
+        image: ahmedjabareen/ynet-rss:1.4
+        ports:
+        - containerPort: 5001
