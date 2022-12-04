@@ -16,7 +16,8 @@ kubectl apply -f apps.yml
 kubectl apply -f services.yml
 kubectl apply -f ingress.yml
 ```
-Using the application
+## Using the application
+
 use:
 `kubectl get ingress`
 and copy the IP address.
