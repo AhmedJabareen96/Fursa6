@@ -20,11 +20,20 @@ Using the application
 use:
 `kubectl get ingress`
 and copy the IP address.
+assign it to a variable, say 'ADDR'
+
 If you are using bash, use:
+
 `ADDR=$(kubectl get ingress | awk 'FNR==2 {print $4}')`
+
 To get to ynet-rss go to:
+
 `curl $ADDR/ynet-rss/list`
+
 to get bitcoin current rate,:
+
 `curl $ADDR/bitcoin-rate/getNow`
+
 to get bitcoin rate average in the last 10 minutes:
+
 `curl $ADDR/bitcoin-rate/getAvg`
